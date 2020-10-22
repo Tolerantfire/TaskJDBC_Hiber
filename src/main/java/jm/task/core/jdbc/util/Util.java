@@ -28,18 +28,5 @@ public class Util {
         return connection;
     }
 
-    public Session getSession(){
-        Configuration configuration = new Configuration();
-        configuration.setProperty("hibernate.connection.username", USERNAME);
-        configuration.setProperty("hibernate.connection.password", PASSWORD);
-        configuration.setProperty("hibernate.connection.url", URL);
-        configuration.setProperty("hibernate.show_sql", "true");
-        configuration.addAnnotatedClass(User.class);
-        sessionFactory = configuration.buildSessionFactory();
-        return session = sessionFactory.openSession();
-    }
 
-    public void closeSessionFactory() {
-        sessionFactory.close();
-    }
 }
